@@ -1,7 +1,46 @@
+.controls {
+  margin: 24px;
+  padding: 24px;
+  background: #e7c9a960;
+  border: 1px solid black;
+  border-radius: 6px;
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+}
+
+.upload::file-selector-button {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  margin-right: 16px;
+  font-weight: 600;
+}
+
+.selects {
+  display: flex;
+  gap: 24px;
+}
+
+.selects label {
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.selects label select {
+  width: 300px;
+}
+
 .card-wrapper {
   display: flex;
   flex-flow: row wrap;
   gap: 40px;
+  margin: 24px;
 }
 
 .card {
@@ -31,11 +70,15 @@
 }
 
 @media print {
-  .upload {
+  .controls {
     display: none;
   }
 
   .card {
     break-inside: avoid;
+  }
+
+  .card-wrapper {
+    margin: 0;
   }
 }
