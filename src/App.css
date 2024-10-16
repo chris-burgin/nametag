@@ -20,6 +20,17 @@
   font-weight: 600;
 }
 
+.style label {
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.style label select {
+  width: 300px;
+}
+
 .selects {
   display: flex;
   gap: 24px;
@@ -44,29 +55,56 @@
 }
 
 .card {
+  width: 3.5in;
+  height: 2.2in;
+}
+
+.card.basic {
   border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
   gap: 12px;
-  width: 3.5in;
-  height: 2.2in;
+
+  .name {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .divider {
+    border: 1px solid black;
+    width: 50%;
+  }
+
+  .team {
+    font-size: 24px;
+    font-weight: 600;
+  }
 }
 
-.card .name {
-  font-size: 32px;
-  font-weight: 600;
-}
+.card.big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 12px;
 
-.card .divider {
-  border: 1px solid black;
-  width: 50%;
-}
+  .name {
+    font-size: 48px;
+    padding: 8px;
+    text-align: center;
+  }
 
-.card .team {
-  font-size: 24px;
-  font-weight: 600;
+  .divider {
+    display: none;
+  }
+
+  .team {
+    font-size: 24px;
+    padding: 8px;
+    display: none;
+  }
 }
 
 @media print {

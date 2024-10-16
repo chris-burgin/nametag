@@ -6,6 +6,7 @@ function App() {
   const [fields, setFields] = useState({});
   const [header, setHeader] = useState(undefined);
   const [data, setData] = useState(undefined);
+  const [style, setStyle] = useState("basic");
 
   const uploadFile = async (event) => {
     const text = await event.target.files[0].text();
@@ -17,10 +18,24 @@ function App() {
     setData(parsed);
   };
 
+  console.log(style);
+
   return (
     <div className="App">
       <div className="controls">
         <input type="file" onChange={uploadFile} className="upload" />
+        <div className="style">
+          <label>
+            Card Style
+            <select
+              name="style"
+              onChange={(event) => setStyle(event.target.value)}
+            >
+              <option value="basic"> Basic </option>
+              <option value="big"> Big </option>
+            </select>
+          </label>
+        </div>
         <div className="selects">
           <label>
             Primary
@@ -60,7 +75,7 @@ function App() {
         {data &&
           fields.primary &&
           data.map((entry) => (
-            <div className="card">
+            <div className={`card ${style}`}>
               <div className="name">{entry[fields.primary]}</div>
               <div className="divider" />
               <div className="team">{entry[fields.secondary]}</div>
