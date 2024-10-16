@@ -50,7 +50,7 @@
 .card-wrapper {
   display: flex;
   flex-flow: row wrap;
-  gap: 40px;
+  gap: 12px;
   margin: 24px;
 }
 
@@ -87,8 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid black;
-  border-radius: 12px;
+  border: 1px solid black;
 
   .name {
     font-size: 48px;
@@ -101,8 +100,6 @@
   }
 
   .team {
-    font-size: 24px;
-    padding: 8px;
     display: none;
   }
 }
